@@ -54,6 +54,7 @@ def run_agent(question: str):
     ]
 
     for iteration in range(1, MAX_ITERATIONS+1):
+        print(f"    >> Executing run_agent for iteration: {iteration}")
         ai_message = llm_with_tools.invoke(messages)
         tool_calls = ai_message.tool_calls
         if not tool_calls:
